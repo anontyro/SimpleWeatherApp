@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">WeatherAp</string>
+    <string name="button_search">Search City</string>
+    <string name="hint_search">Enter city</string>
+
+</resources>
