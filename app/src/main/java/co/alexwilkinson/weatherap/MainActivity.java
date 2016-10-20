@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void buSearch(View view) {
         String query = etQuery.getText().toString();
-        title = query.trim();
+        title = query.trim().toUpperCase();
         query = query.replaceAll("\\s", "");
         String url = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from" +
                 "%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20" +
@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
         //can access the UI from here
         protected void onProgressUpdate(String...progress){
             try{
-                //display response data
+                //display response data from JSON broken down
                 JSONObject json = new JSONObject(progress[0]);
                 JSONObject query = json.getJSONObject("query");
                 JSONObject results = query.getJSONObject("results");
@@ -110,18 +110,20 @@ public class MainActivity extends AppCompatActivity {
 
                 int temp = Integer.parseInt(condition.getString("temp"));
                 temp = (temp-32) * 5/9;
-                System.out.println(condition.getString("text"));
+                System.out.println(channel.getJSONObject("location"));
 
 
                 String weatherCondition =(condition.getString("text")).toLowerCase();
 
 
 
-                tvTitle.setText(title);
+                tvTitle.setText(title + ", " +((channel.getJSONObject("location")).getString("region")));
                 tvTemp.setText(temp+"°C");
 //                ivCondition.setImageResource(R.drawable.sun);
 
-                if(weatherCondition.contains("cloud") || weatherCondition.contains("rain")){
+                if(weatherCondition.contains("cloud")
+                        || weatherCondition.contains("rain")
+                        || weatherCondition.contains("shower")){
                     ivCondition.setImageResource(R.drawable.rain);
                     System.out.println("true");
                 }
@@ -129,9 +131,14 @@ public class MainActivity extends AppCompatActivity {
                     ivCondition.setImageResource(R.drawable.sun);
                     System.out.print("false");
                 }
-                ivCondition.refreshDrawableState();
 
-                Toast.makeText(getApplicationContext(), "Sunrise: "+sunrise +"\n Sunset: " +sunset,Toast.LENGTH_LONG).show();
+                tvConditions.setText(condition.getString("text") + "\n" +
+                        "Sunrise: " +sunrise + "\n" +
+                        "Sunset: " +sunset + "\n"
+                );
+                etQuery.setText("");
+
+//                Toast.makeText(getApplicationContext(), "Sunrise: "+sunrise +"\n Sunset: " +sunset,Toast.LENGTH_LONG).show();
             }
             catch(Exception ex){ ex.getStackTrace();}
         }

@@ -14,7 +14,10 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <LinearLayout
             android:id="@+id/searchBar"
@@ -50,7 +53,7 @@
             android:id="@+id/titleTemp">
 
             <TextView
-                android:text="TextView"
+
                 android:textSize="20pt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -58,8 +61,9 @@
                 android:layout_weight="1" />
 
             <TextView
-                android:text="TextView"
+
                 android:layout_width="wrap_content"
+                android:textSize="15pt"
                 android:layout_height="wrap_content"
                 android:id="@+id/tvTemp"
                 android:layout_weight="0" />
@@ -76,13 +80,13 @@
             <ImageView
                 android:layout_height="70dp"
                 android:layout_width="70dp"
-                app:srcCompat="@mipmap/ic_launcher"
+
                 android:id="@+id/ivCondition"
 
                 android:layout_weight="0.39" />
 
             <TextView
-                android:text="TextView"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/tvConditions"
