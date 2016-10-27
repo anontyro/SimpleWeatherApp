@@ -3,9 +3,9 @@
 
     <item android:state_pressed="true">
         <shape xmlns:android="http://schemas.android.com/apk/res/android">
-            <solid android:color="#7D2475"></solid>
+            <solid android:color="#C26EBA"></solid>
             <corners android:radius="1000dp"></corners>
-            <stroke android:color="#000000" android:width="10dp"></stroke>
+            <stroke android:color="#000000" android:width="2dp"></stroke>
         </shape>
     </item>
 

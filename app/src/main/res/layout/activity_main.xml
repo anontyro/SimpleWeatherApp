@@ -23,6 +23,7 @@
             android:id="@+id/searchBar"
             android:orientation="horizontal"
             android:layout_width="match_parent"
+            android:paddingBottom="20px"
             android:layout_height="match_parent">
 
             <EditText
@@ -46,53 +47,10 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/titleTemp">
-
-            <TextView
-
-                android:textSize="20pt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/tvTitle"
-                android:layout_weight="1" />
-
-            <TextView
-
-                android:layout_width="wrap_content"
-                android:textSize="15pt"
-                android:layout_height="wrap_content"
-                android:id="@+id/tvTemp"
-                android:layout_weight="0" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
+        <ListView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:id="@+id/Conditions">
-
-            <ImageView
-                android:layout_height="70dp"
-                android:layout_width="70dp"
-
-                android:id="@+id/ivCondition"
-
-                android:layout_weight="0.39" />
-
-            <TextView
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/tvConditions"
-                android:layout_weight="1" />
-
-        </LinearLayout>
+            android:id="@+id/lvWeather" />
 
     </LinearLayout>
 

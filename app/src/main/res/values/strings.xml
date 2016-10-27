@@ -2,5 +2,8 @@
     <string name="app_name">WeatherAp</string>
     <string name="button_search">Search City</string>
     <string name="hint_search">Enter city</string>
+    <string name="button_update">Update</string>
+    <string name="button_delete">Delete</string>
+
 
 </resources>
